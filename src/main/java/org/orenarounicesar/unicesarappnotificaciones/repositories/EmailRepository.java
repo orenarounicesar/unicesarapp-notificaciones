@@ -21,7 +21,7 @@ public class EmailRepository {
                 + "codigo_estudiante_asignatura, "
                 + "email_origen, "
                 + "email_destino, "
-                + "asunto, "
+                + "email_asunto, "
                 + "fecha"
             + ") VALUES (?, ?, ?, ?, now()) " , 
             new Object[]{email.getCodigoEstudianteAsignatura(), email.getEmailOrigen(), email.getEmailDestino(), email.getEmailAsunto()}
@@ -37,12 +37,12 @@ public class EmailRepository {
                 + "a.email_destino, "
                 + "a.email_asunto, "
                 + "a.fecha "
-            + "FROM mails a ", 
+            + "FROM emails a ", 
             (rs, rowNum) -> new Email(
                 rs.getInt("codigo_email"), 
                 rs.getInt("codigo_estudiante_asignatura"), 
                 rs.getString("email_origen"), 
-                rs.getString(null), 
+                null, 
                 rs.getString("email_destino"), 
                 rs.getString("email_asunto"),
                 null, 
