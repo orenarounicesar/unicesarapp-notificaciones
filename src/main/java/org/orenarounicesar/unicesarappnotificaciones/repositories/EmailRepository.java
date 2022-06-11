@@ -42,10 +42,10 @@ public class EmailRepository {
                 rs.getInt("codigo_email"), 
                 rs.getInt("codigo_estudiante_asignatura"), 
                 rs.getString("email_origen"), 
-                null, 
+                "", 
                 rs.getString("email_destino"), 
                 rs.getString("email_asunto"),
-                null, 
+                "", 
                 rs.getTimestamp("fecha")
             )
         );
